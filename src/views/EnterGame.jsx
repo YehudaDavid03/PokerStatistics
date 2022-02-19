@@ -20,15 +20,25 @@ const EnterGame = ({ updateApiSend, playersRender }) => {
 
   const handlePushChangeWinners = (e) => {
     if (enterNewGame.winners.includes(e.target.value)) {
-      window.confirm("Player already chosen would you like to remove this player?")
+      if (window.confirm("Player already chosen would you like to remove this player?")) {
+        const name = e.target.value
+        setEnterNewGame({...enterNewGame, winners: [...enterNewGame.winners.filter((e) => (e !== name))]})
+      } else {}
     } else {
-      setEnterNewGame({...enterNewGame, winners: [...enterNewGame.winners, e.target.value]})
+      if (enterNewGame.players.includes(e.target.value)) {
+        setEnterNewGame({...enterNewGame, winners: [...enterNewGame.winners, e.target.value]})
+      } else {
+        setEnterNewGame({...enterNewGame, winners: [...enterNewGame.winners, e.target.value], players: [...enterNewGame.players, e.target.value]})
+      }
     }
   }
 
   const handlePushChangePlayers = (e) => {
     if (enterNewGame.players.includes(e.target.value)) {
-      window.confirm("Player already chosen would you like to remove this player?")
+      if (window.confirm("Player already chosen would you like to remove this player?")) {
+        const name = e.target.value
+        setEnterNewGame({...enterNewGame, winners: [...enterNewGame.winners.filter((e) => (e !== name))], players: [...enterNewGame.players.filter((e) => (e !== name))]})
+      } else {}
     } else {
       setEnterNewGame({...enterNewGame, players: [...enterNewGame.players, e.target.value]})
     }
