@@ -30,38 +30,44 @@ function App() {
 
   // Getting players from api
   useEffect(() => {
-    setLoading(true)
-    try {
-      const playersApiCall = async () => {
-        const { data } = await axios.get('https://sleepy-ocean-12912.herokuapp.com/api/players?populate=*', {
-          headers: {
-            Authorization:
-              `Bearer ${userInfoReceived.jwt}`,
-          },
-        })
-        setPlayersRender(data.data)
-        setLoading(false)
+    if (userInfoReceived.jwt) {
+      setLoading(true)
+      try {
+        const playersApiCall = async () => {
+          const { data } = await axios.get('https://sleepy-ocean-12912.herokuapp.com/api/players?populate=*', {
+            headers: {
+              Authorization:
+                `Bearer ${userInfoReceived.jwt}`,
+            },
+          })
+          setPlayersRender(data.data)
+          setLoading(false)
+        }
+        playersApiCall()
+      } catch(error) {
       }
-      playersApiCall()
-    } catch(error) {
-    }
+    } else {}
   }, [updateApiReceived, userInfoReceived])
 
   // Getting games from api
   useEffect(() => {
-    try {
-      const gamesApiCall = async () => {
-        const { data } = await axios.get('https://sleepy-ocean-12912.herokuapp.com/api/games?pagination[pageSize]=1000', {
-          headers: {
-            Authorization:
-              `Bearer ${userInfoReceived.jwt}`,
-          },
-        })
-        setGamesRender(data.data)
+    if (userInfoReceived.jwt) {
+      setLoading(true)
+      try {
+        const gamesApiCall = async () => {
+          const { data } = await axios.get('https://sleepy-ocean-12912.herokuapp.com/api/games?pagination[pageSize]=1000', {
+            headers: {
+              Authorization:
+                `Bearer ${userInfoReceived.jwt}`,
+            },
+          })
+          setGamesRender(data.data)
+          setLoading(false)
+        }
+        gamesApiCall()
+      } catch(error) {
       }
-      gamesApiCall()
-    } catch(error) {
-    }
+    } else {}
   }, [updateApiReceived, userInfoReceived])
 
   return (

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 const Login = ({ userInfoSend }) => {
+  const [errorMessage, setErrorMessage] = useState("")
+
   const [userInfo, setUserInfo] = useState({
     jwt: null, 
     username: null,
@@ -36,8 +38,17 @@ const Login = ({ userInfoSend }) => {
         })
       }
       loginApiCall()
+
+      if (userInfo.jwt) {
+
+      } else {
+        setErrorMessage("*please verify your credentials")
+        setLogin({
+          emailAddress: "",
+          password: "",
+        })
+      }
     } catch(error) {
-      console.log(error)
     }
   }
 
@@ -45,12 +56,25 @@ const Login = ({ userInfoSend }) => {
     userInfoSend(userInfo)
   }, [userInfo])
 
-  console.log(userInfo)
-
   return (
     <div className="login-main">
       <div className="login-main-a">
         <h1>login</h1>
+        {
+          errorMessage 
+          
+          ?
+
+          (
+            <p>{errorMessage}</p>
+          ) 
+
+          :
+
+          (
+            <></>
+          )
+        }
 
         <input
           type="email" 
