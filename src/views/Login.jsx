@@ -93,9 +93,7 @@ const Login = ({ userInfoSend }) => {
         <button onClick={handleSubmit}>Login</button>
       </div>
 
-      <div className="login-main-b">
-
-      </div>
+      <div className="login-main-b"></div>
     </div>
   )
 }

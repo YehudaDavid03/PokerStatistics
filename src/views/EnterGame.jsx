@@ -151,12 +151,7 @@ const EnterGame = ({ updateApiSend, playersRender, userInfoReceived }) => {
       </div>
 
         <div className="enter-game-main-bottom">
-          <input
-            type="submit" 
-            name="submit" 
-            value={"Verify Game Upload"}
-            onClick={handleSubmit}
-          ></input>
+          <h6 onClick={handleSubmit}>Verify Game Upload</h6>
         </div>
     </div>
   )
