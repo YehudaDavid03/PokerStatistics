@@ -2,7 +2,7 @@ import useStateWithCallback from "use-state-with-callback"
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 
-const EnterGame = ({ updateApiSend, playersRender }) => {
+const EnterGame = ({ updateApiSend, playersRender, userInfoReceived }) => {
   const [updateApi, setUpdateApi] = useStateWithCallback(true, () => {
     updateApiSend(updateApi)
   })
@@ -49,6 +49,10 @@ const EnterGame = ({ updateApiSend, playersRender }) => {
     axios({
       method: "post",
       url: "https://sleepy-ocean-12912.herokuapp.com/api/games",
+      headers: {
+        Authorization:
+          `Bearer ${userInfoReceived.jwt}`,
+      },
       data: {
         data: {
           betAmount: enterNewGame.betAmount,

@@ -11,6 +11,7 @@
   font-size: 100%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  transition: .4s;
   color: var(--secondary);
   font-family: 'Nanum Gothic', sans-serif;
   font-family: 'Quicksand', sans-serif;
@@ -27,6 +28,77 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
   font-family: 'Quicksand', sans-serif;
   font-family: 'Titillium Web', sans-serif;
+}
+
+/* Login Main */
+.login-main {
+  margin: 0% auto;
+  width: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-main-a {
+  padding: 2.5%;
+  width: 70%;
+  height: 60vh;
+  background-color: var(--white);
+}
+
+.login-main-a * {
+  margin: 2.5%;
+}
+
+.login-main-b {
+  width: 30%;
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover;
+  opacity: .6;
+  background-image: url("https://images.unsplash.com/photo-1446669052213-5dcff53f1f3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80");
+}
+
+.login-main-a h1 {
+  color: var(--secondary);
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.login-main-a input {
+  width: 60%;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px var(--secondary);
+}
+
+.login-main-a p {
+  color: var(--secondary);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.login-main-a button {
+  width: 60%;
+  border: none;
+  padding: .5%;
+  color: var(--white);
+  background-color: var(--main);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.login-main-a button:hover {
+  border: solid 1px var(--main);
+  color: var(--main);
+  background-color: var(--white);
 }
 
 /* App Main */
