@@ -9,7 +9,7 @@ import PlayerSide from "./views/PlayerSide"
 import LoadingWheel from "./components/LoadingWheel"
 
 function App() {
-  const [userInfoReceived, setUserInfoReceived] = useState(false)
+  const [userInfoReceived, setUserInfoReceived] = useState({})
   const [updateApiReceived, setUpdateApiReceived] = useState()
   const [playersRender, setPlayersRender] = useState()
   const [gamesRender, setGamesRender] = useState()
@@ -21,6 +21,12 @@ function App() {
       setUserInfoReceived(userInfoSend)
     } else {
     }
+  }
+
+  // Logout button available in NavBar
+  const logout = () => {
+    setUserInfoReceived({})
+    console.log(userInfoReceived)
   }
 
   // Update Api
@@ -72,10 +78,10 @@ function App() {
 
   return (
     <div className="app-main">
-      <NavBar gamesRender={gamesRender} loading={loading}/>
+      <NavBar gamesRender={gamesRender} loading={loading} userInfoReceived={userInfoReceived} logout={logout} />
 
       {
-        userInfoReceived ?
+        userInfoReceived.jwt ?
 
         (
           <>
