@@ -40,7 +40,7 @@ const Login = ({ userInfoSend }) => {
       loginApiCall()
 
       if (userInfo.jwt) {} else {
-        setErrorMessage("*please verify your credentials")
+        setErrorMessage("*please wait one moment if not try again")
         setLogin({
           emailAddress: "",
           password: "",

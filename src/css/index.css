@@ -18,12 +18,6 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
-  * {
-    margin: 0;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -48,6 +42,13 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+@media only screen and (max-width: 900px) {
+  .login-main {
+    width: 80%;
+    flex-direction: column;
+  }
+}
+
 .login-main-a {
   padding: 2.5%;
   width: 70%;
@@ -57,6 +58,13 @@ body {
 
 .login-main-a * {
   margin: 2.5%;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .login-main-a * {
+    margin: 10% 0% 10% 0%;
+  }
 }
 
 .login-main-a h1 {
@@ -73,8 +81,14 @@ body {
   border-bottom: solid 1px var(--secondary);
 }
 
+@media only screen and (max-width: 900px) {
+  .login-main-a input {
+    width: 100%;
+  }
+}
+
 .login-main-a p {
-  color: #DB4437;
+  color: #0F9D58;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
@@ -84,17 +98,23 @@ body {
   width: 60%;
   border: none;
   padding: .5%;
-  color: var(--white);
-  background-color: var(--main);
   font-size: 16px;
   font-weight: 400;
-  text-transform: uppercase;
-}
-
-.login-main-a button:hover {
   border: solid 1px var(--main);
   color: var(--main);
   background-color: var(--white);
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 900px) {
+  .login-main-a button {
+    width: 100%;
+  }
+}
+
+.login-main-a button:hover {
+  color: var(--white);
+  background-color: var(--main);
 }
 
 .login-main-b {
@@ -105,6 +125,12 @@ body {
   background-size: cover;
   opacity: .6;
   background-image: url("../assets/loginImage.png");
+}
+
+@media only screen and (max-width: 900px) {
+  .login-main-b {
+    display: none;
+  }
 }
 
 /* App Main */
@@ -124,6 +150,13 @@ body {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 900px) {
+  .app-main-split {
+    height: auto;
+    flex-direction: column;
+  }
+}
+
 .app-main-split-games {
   margin: 1.25%;
   width: 60%;
@@ -132,6 +165,12 @@ body {
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .app-main-split-games {
+    width: 98%;
+  }
 }
 
 /* Nav Bar Main */
@@ -146,7 +185,13 @@ body {
   justify-content: space-between;
 }
 
-.nav-bar-main h1, h4 {
+@media only screen and (max-width: 900px) {
+  .nav-bar-main {
+    padding: 2.5%;
+  }
+}
+
+.nav-bar-main h1, h4, h5 {
   color: var(--white);
   font-size: 18px;
   font-weight: 400;
@@ -158,7 +203,7 @@ body {
   justify-content: start;
 }
 
-.nav-bar-main h1 span {
+.nav-bar-main h1 span, h5 span {
   font-size: 22px;
   color: var(--white);
 }
@@ -285,6 +330,12 @@ body {
   height: 100%;
   margin: 1.25%;
   overflow-y: scroll;
+}
+
+@media only screen and (max-width: 900px) {
+  .player-side-main {
+    width: 98%;
+  }
 }
 
 /* Player Card Main */
